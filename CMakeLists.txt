@@ -6,6 +6,9 @@ project(
     LANGUAGES C CXX
     )
 
-add_library(library STATIC kelvin.cpp)
-add_executable(TemperatureConvertor main.cpp)
-target_link_libraries(TemperatureConvertor library)
+set(EXEC_NAME "TemperatureConvertor")
+set(LIB_KELVIN "Lib_Kelvin")
+set(LIB_FAHRENHEIT "Lib_Fahrenheit")
+
+add_subdirectory(app)
+add_subdirectory(src)
