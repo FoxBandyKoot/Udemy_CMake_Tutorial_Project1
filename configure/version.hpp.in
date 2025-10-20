@@ -1,0 +1,9 @@
+#pragma once
+#include <cstdint>
+#include <string_view>
+
+static constexpr std::string_view cProjectName = "@PROJECT_NAME@";
+static constexpr std::string_view cProjectVersion = "@PROJECT_VERSION@";
+static const char cProjectVersionMajor = *"@PROJECT_VERSION_MAJOR@";
+static const char cProjectVersionMinor = *"@PROJECT_VERSION_MINOR@";
+static const char cProjectVersionPatch = *"@PROJECT_VERSION_PATCH@";
