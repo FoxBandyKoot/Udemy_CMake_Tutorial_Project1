@@ -6,6 +6,15 @@ project(
     LANGUAGES C CXX
     )
 
+# FetchContent to get external libraries || https://www.udemy.com/course/cmake-clarifie-maitrisez-vos-projets-cc/learn/lecture/48149715#
+include(FetchContent)
+FetchContent_Declare(
+    fmt
+    GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+    GIT_TAG 12.0.0
+    GIT_SHALLOW TRUE)
+FetchContent_MakeAvailable(fmt)
+
 
 # SETTINGS
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

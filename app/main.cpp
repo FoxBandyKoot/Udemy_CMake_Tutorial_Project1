@@ -3,7 +3,13 @@
 #include "version.hpp"
 #include <fstream>
 #include <nlohmann/json.hpp>
+#include <fmt/format.h>
 using json = nlohmann::json;
+
+void test_fmt_lib()
+{
+    fmt::print("Testing fmt library\n");
+}
 
 void test_nlohmann_json_lib()
 {
@@ -39,6 +45,7 @@ int main(void)
     printFahrenheitTemperature(kelvin, fahrenheit);
 
     test_nlohmann_json_lib();
-
+    test_fmt_lib();
+    
     return 0;   
 }
