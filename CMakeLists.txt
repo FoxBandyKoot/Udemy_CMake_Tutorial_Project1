@@ -6,6 +6,7 @@ project(
     LANGUAGES C CXX
     )
 
+
 # SETTINGS
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -34,3 +35,6 @@ endif()
 
 add_subdirectory(configure)
 add_subdirectory(src)
+
+# Modules
+add_subdirectory(nlohmann_json)

@@ -1,9 +1,33 @@
 #include "../src/lib_kelvin/kelvin.h"
 #include "../src/lib_fahrenheit/fahrenheit.h"
 #include "version.hpp"
+#include <fstream>
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
+void test_nlohmann_json_lib()
+{
+        json j2 = {
+        {"pi", 3.141},
+        {"happy", true},
+        {"name", "Niels"},
+        {"nothing", nullptr},
+        {"answer", {
+            {"everything", 42}
+        }},
+        {"list", {1, 0, 2}},
+        {"object", {
+            {"currency", "USD"},
+            {"value", 42.99}
+        }}
+    };
+    std::ofstream o("example.json");
+    o << std::setw(4) << j2 << std::endl;
+}
 
 int main(void)
 {
+    // Test CMAKE/C++ global variables
     std::cout << "Temperature Converter Application - Name Project "<< cProjectName << std::endl;
     std::cout << "Temperature Converter Application - Version: " << cProjectVersion << std::endl;
 
@@ -14,6 +38,7 @@ int main(void)
     float fahrenheit = kelvinToFahrenheit(kelvin);
     printFahrenheitTemperature(kelvin, fahrenheit);
 
+    test_nlohmann_json_lib();
 
     return 0;   
 }
