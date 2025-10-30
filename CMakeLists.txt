@@ -15,7 +15,12 @@ FetchContent_Declare(
     GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(fmt)
 
-
+# CONAN
+# instllation : pipx install conan
+# configuration (at build project folder): conan install .. -s build_type=Debug -s compiler.cppstd=17 --output-folder=. --build missing
+include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
+find_package(Catch2 REQUIRED)
+    
 # SETTINGS
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
