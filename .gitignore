@@ -9,6 +9,9 @@ install_manifest.txt
 *.ninja
 install/*
 DartConfiguration.tcl
+html/*
+latex/*
+doxyfile.bak
 
 #modules
 nlohmann_json/*

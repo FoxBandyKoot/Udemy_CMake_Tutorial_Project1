@@ -31,10 +31,10 @@ set(INSTALL_PATH "${CMAKE_CURRENT_SOURCE_DIR}/install" CACHE PATH "Installation 
 
 set(LIB_KELVIN "Lib_Kelvin")
 set(LIB_FAHRENHEIT "Lib_Fahrenheit")
-# set(LD_LIBRARY_PATH "$LD_LIBRARY_PATH;${INSTALL_PATH}/lib")
+
+#inclusion doxygen documentation
 
 set(CMAKE_BUILD_TYPE Debug)
-
 # DEBUG
 option(ENABLE_DEBUG "Activate debug mode" OFF)
 if(ENABLE_DEBUG)
@@ -83,3 +83,5 @@ if((CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME) AND (LIB_CTest))
     enable_testing()
     add_subdirectory(tests)
 endif()
+
+include(cmake/Documentation.cmake)

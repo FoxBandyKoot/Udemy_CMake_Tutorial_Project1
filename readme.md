@@ -3,6 +3,7 @@ https://www.udemy.com/course/cmake-clarifie-maitrisez-vos-projets-cc
 
 
 Fill the install folder: cmd "make install"
+
 -------------------------------------
 
 Error: When configure project with "cmake path" cmd:
