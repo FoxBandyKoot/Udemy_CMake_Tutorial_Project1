@@ -5,7 +5,7 @@ Error: When configure project with "cmake path" cmd:
 
 include could not find requested file: /.../build/conan_toolchain.cmake
 
-Solution: Type cmd : conan install .. -s build_type=Debug -s compiler.cppstd=17 --output-folder=. --build missing
+Solution: Type cmd in the build folder: conan install .. -s build_type=Debug -s compiler.cppstd=17 --output-folder=. --build missing
 
 -------------------------------------
 

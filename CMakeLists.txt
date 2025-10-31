@@ -33,19 +33,33 @@ set(CMAKE_BUILD_TYPE Debug)
 # DEBUG
 option(ENABLE_DEBUG "Activate debug mode" OFF)
 if(ENABLE_DEBUG)
-message(STATUS "CHARLY MESSAGE - Debug mode is enabled")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g") # Add debug symbols
+    message(STATUS "FoxBandyKoot Message - Debug mode is enabled")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g") # Add debug symbols
 else()
-message(STATUS "CHARLY MESSAGE - Debug mode is disabled")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2") # Optimize for release
+    message(STATUS "FoxBandyKoot Message - Debug mode is disabled")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2") # Optimize for release
+endif()
+
+
+# WARNINGS
+option(ENABLE_WARNINGS "Enable all compiler warnings" ON)
+if(ENABLE_WARNINGS)
+    message("Settings Warnings")
+
+    if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
+        message("FoxBandyKoot Message - MSVC -Compiler")
+        set(WARNING_MSVC /W4 /Wall /permissive)
+    elseif(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+        message("FoxBandyKoot Message - GCC - Compiler")
+        set(WARNING_GCC_COMPILER ${WARNING_GCC})
+    endif()
+    
 endif()
 
 # COMPILE
 option(COMPILE_APP "Compile the application" ON)
-
-# Add folders
 if(COMPILE_APP)
-add_subdirectory(app)
+    add_subdirectory(app)
 endif()
 
 add_subdirectory(configure)
@@ -59,7 +73,7 @@ add_subdirectory(nlohmann_json)
 # PROJECT_NAME => Name of the current project
 option(LIB_CTest "Compile the CTest library" ON)
 if((CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME) AND (LIB_CTest))
-    message("CHARLY MESSAGE - Adding CTest")
+    message("FoxBandyKoot MESSAGE - Adding CTest")
     include(CTest)
     enable_testing()
     add_subdirectory(tests)
