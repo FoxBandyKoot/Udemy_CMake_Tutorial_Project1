@@ -19,15 +19,20 @@ FetchContent_MakeAvailable(fmt)
 # instllation : pipx install conan
 # configuration (at build project folder): conan install .. -s build_type=Debug -s compiler.cppstd=17 --output-folder=. --build missing
 include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
-find_package(Catch2 REQUIRED)
+find_package(Catch2)
     
 # SETTINGS
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD 17)
 set(EXEC_NAME "TemperatureConvertor")
+
+set(INSTALL_PATH "${CMAKE_CURRENT_SOURCE_DIR}/install" CACHE PATH "Installation Path")
+
 set(LIB_KELVIN "Lib_Kelvin")
 set(LIB_FAHRENHEIT "Lib_Fahrenheit")
+# set(LD_LIBRARY_PATH "$LD_LIBRARY_PATH;${INSTALL_PATH}/lib")
+
 set(CMAKE_BUILD_TYPE Debug)
 
 # DEBUG
@@ -53,7 +58,7 @@ if(ENABLE_WARNINGS)
         message("FoxBandyKoot Message - GCC - Compiler")
         set(WARNING_GCC_COMPILER ${WARNING_GCC})
     endif()
-    
+
 endif()
 
 # COMPILE

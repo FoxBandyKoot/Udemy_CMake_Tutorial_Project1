@@ -1,6 +1,10 @@
 # Udemy Tutorial about CMake
 https://www.udemy.com/course/cmake-clarifie-maitrisez-vos-projets-cc
 
+
+Fill the install folder: cmd "make install"
+-------------------------------------
+
 Error: When configure project with "cmake path" cmd:
 
 include could not find requested file: /.../build/conan_toolchain.cmake
